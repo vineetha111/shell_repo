@@ -1,5 +1,5 @@
 #/bin/bash
 
-timestamp= $(date)
+TIMESTAMP=$(date)
 
-echo "today date is :: $timestamp"
+echo "today date is :: $TIMESTAMP"
