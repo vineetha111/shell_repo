@@ -24,7 +24,29 @@ if [ $? -ne 0 ]
 then 
     echo " msq not installed..going to install "
     dnf install mysql -y
-    VALIDATE($?,mysql)
+    VALIDATE $? "mysql"
 else 
     echo " already installed "
 fi
+
+dnf list installed python3
+
+if [$? -ne 0]
+then 
+    echo " python3 is not installed..going to install "
+    dnf install python3 -y
+    VALIDATE $? " python3 "
+else
+    echo " python3 already installed "
+if
+
+dnf list installed nginx
+
+    if[$? -ne 0]
+    then 
+        echo " nginx is not installed ..going to install "
+        dnf install nginx -y
+        VALIDATE $? " nginx "
+    else 
+        echo " nginx already installed "
+    if
