@@ -38,7 +38,7 @@ then
     VALIDATE $? " python3 "
 else
     echo " python3 already installed "
-if
+fi
 
 dnf list installed nginx
 
@@ -49,4 +49,4 @@ then
         VALIDATE $? " nginx "
 else 
         echo " nginx already installed "
-if
+fi
