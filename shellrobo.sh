@@ -5,6 +5,7 @@ G="\e[32m"
 B="\e[33m"
 N="\e[0m"
 
+
 if [ $USRID -ne 0 ]
 then
     echo -e "$R ERROR:: please sign in with root user $n"
