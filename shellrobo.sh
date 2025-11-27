@@ -1,9 +1,13 @@
 #!/bin/bash
 USRID=$(id -u)
+R="/e[31m"
+G="/e[32m"
+B="/e[33m"
+N="/e[0m"
 
 if [ $USRID -ne 0 ]
 then
-    echo "ERROR:: please sign in with root user"
+    echo -e "$R ERROR:: please sign in with root user $n"
     exit 1
 else 
     echo "already root user"
@@ -11,7 +15,7 @@ fi
 VALIDATE(){
     if [ $1 -eq 0 ]
     then
-        echo "$2 installed successfully"
+        echo "$G $2 installed successfully $N"
     else
         echo "installing $2 is failed"
         exit 1
@@ -25,7 +29,7 @@ then
     dnf install mysql -y
     VALIDATE $? "mysql"
 else 
-    echo "already installed"
+    echo "$B already installed $N"
 fi
 
 dnf list installed python3
@@ -35,7 +39,7 @@ then
     dnf install python3 -y
     VALIDATE $? "python3"
 else
-    echo "python3 already installed"
+    echo "$B python3 already installed $N"
 fi
 
 dnf list installed nginx
@@ -46,5 +50,5 @@ then
     dnf install nginx -y
     VALIDATE $? "nginx"
 else 
-    echo "nginx already installed"
+    echo "$B nginx already installed $N"
 fi
