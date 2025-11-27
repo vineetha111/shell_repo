@@ -8,20 +8,23 @@ then
 else 
     echo "already root user "
 fi
+VALIDATE(){
+    if [ $1 -eq 0 ]
+    then
+        echo " $2 installed successfully "
+    else
+        echo " installing $2 is failed "
+        exit 1
+    fi
 
+}
 dnf list installed mysql 
 
 if [ $? -ne 0 ]
 then 
     echo " msq not installed..going to install "
     dnf install mysql -y
-    if [ $? -eq 0 ]
-    then
-        echo " mysql installed successfully "
-    else
-        echo " installing mysql is failed "
-        exit 1
-    fi
+    VALIDATE($?,mysql)
 else 
     echo " already installed "
 fi
