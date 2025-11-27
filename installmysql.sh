@@ -42,11 +42,11 @@ if
 
 dnf list installed nginx
 
-    if[$? -ne 0]
-    then 
+if[$? -ne 0]
+then 
         echo " nginx is not installed ..going to install "
         dnf install nginx -y
         VALIDATE $? " nginx "
-    else 
+else 
         echo " nginx already installed "
-    if
+if
