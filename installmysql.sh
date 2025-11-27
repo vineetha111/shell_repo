@@ -27,4 +27,4 @@ then
 else 
     echo " already installed "
     
-if
+fi
