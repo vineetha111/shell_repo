@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 USRID=$(id -u)
 
 if [ $USRID -ne 0 ]
@@ -21,7 +21,7 @@ VALIDATE(){
 dnf list installed mysql 
 if [ $? -ne 0 ]
 then 
-    echo "msq not installed..going to install"
+    echo "mysql not installed..going to install"
     dnf install mysql -y
     VALIDATE $? "mysql"
 else 
@@ -39,7 +39,7 @@ else
 fi
 
 dnf list installed nginx
-if[ $? -ne 0 ]
+if [ $? -ne 0 ]
 
 then 
     echo "nginx is not installed ..going to install"
